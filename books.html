@@ -1,0 +1,49 @@
+---
+layout: default
+title: "Книги"
+lang: bg
+---
+
+<section class="books">
+    <h1>Произведения</h1>
+    
+    <div class="book-categories">
+        <div class="category">
+            <h2>Самостоятелни романи</h2>
+            <div class="books-grid">
+                {% for book in site.books %}
+                    {% if book.lang == page.lang and book.type == 'standalone' %}
+                    <div class="book-item">
+                        <img src="{{ book.cover | relative_url }}" alt="{{ book.title }}">
+                        <h3>{{ book.title }}</h3>
+                        <p>{{ book.description }}</p>
+                        <a href="{{ book.gumroad_url }}" class="btn buy-btn">{{ site.data.translations[page.lang].buy_now }}</a>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Серии</h2>
+            {% for series in site.series %}
+                {% if series.lang == page.lang %}
+                <div class="series">
+                    <h3>{{ series.title }}</h3>
+                    <div class="series-books">
+                        {% assign series_books = site.books | where: 'series', series.slug | where: 'lang', page.lang | sort: 'book_number' %}
+                        {% for book in series_books %}
+                        <div class="book-item">
+                            <span class="book-number">Книга {{ book.book_number }}</span>
+                            <img src="{{ book.cover | relative_url }}" alt="{{ book.title }}">
+                            <h4>{{ book.title }}</h4>
+                            <a href="{{ book.gumroad_url }}" class="btn buy-btn">{{ site.data.translations[page.lang].buy_now }}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Начало"
+lang: bg
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Красимир Тенев</h1>
+        <h2>Crispin Thorn</h2>
+        <p>Автор на спекулативна литература, който създава уникални светове и герои, разширявайки границите на жанра с дълбок интерес към историята и психологическите нюанси.</p>
+    </div>
+</section>
+
+<section class="featured-books">
+    <h2>Последни произведения</h2>
+    <div class="books-grid">
+        {% for book in site.books limit:3 %}
+            {% if book.lang == page.lang %}
+            <div class="book-card">
+                <img src="{{ book.cover | relative_url }}" alt="{{ book.title }}">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.excerpt }}</p>
+                <a href="{{ book.url | relative_url }}" class="btn">{{ site.data.translations[page.lang].read_more }}</a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

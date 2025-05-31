@@ -1,0 +1,27 @@
+title: "Crispin Thorn - Author"
+description: "Speculative fiction author creating unique worlds and characters"
+url: "https://www.crthorn.com"
+baseurl: ""
+
+# Multi-language setup
+languages: ["bg", "en"]
+default_lang: "bg"
+exclude_from_localizations: ["javascript", "images", "css"]
+
+# Collections for books
+collections:
+  books:
+    output: true
+    permalink: /:collection/:name/
+  series:
+    output: true
+    permalink: /:collection/:name/
+  stories:
+    output: true
+    permalink: /:collection/:name/
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag

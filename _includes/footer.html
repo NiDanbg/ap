@@ -1,0 +1,27 @@
+<footer class="site-footer">
+    <div class="wrapper">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ site.title }}</h3>
+                <p>{{ site.description }}</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>{{ site.data.translations[page.lang].books | default: 'Книги' }}</h3>
+                <ul>
+                    <li><a href="{{ '/books/' | relative_url }}">{{ site.data.translations[page.lang].books | default: 'Всички книги' }}</a></li>
+                    <li><a href="{{ '/blog/' | relative_url }}">{{ site.data.translations[page.lang].blog | default: 'Блог' }}</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>{{ site.data.translations[page.lang].contact | default: 'Контакт' }}</h3>
+                <p>contact@crthorn.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Всички права запазени.</p>
+        </div>
+    </div>
+</footer>

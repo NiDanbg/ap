@@ -1,0 +1,22 @@
+<header class="site-header">
+    <div class="wrapper">
+        <h1 class="site-title">
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </h1>
+        
+        <nav class="site-nav">
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">{{ site.data.translations[page.lang].home | default: 'Начало' }}</a></li>
+                <li><a href="{{ '/about/' | relative_url }}">{{ site.data.translations[page.lang].about | default: 'За мен' }}</a></li>
+                <li><a href="{{ '/books/' | relative_url }}">{{ site.data.translations[page.lang].books | default: 'Книги' }}</a></li>
+                <li><a href="{{ '/blog/' | relative_url }}">{{ site.data.translations[page.lang].blog | default: 'Блог' }}</a></li>
+                <li><a href="{{ '/contact/' | relative_url }}">{{ site.data.translations[page.lang].contact | default: 'Контакт' }}</a></li>
+            </ul>
+            
+            <div class="lang-switcher">
+                <a href="/bg{{ page.url }}" {% if page.lang == 'bg' %}class="active"{% endif %}>БГ</a>
+                <a href="/en{{ page.url }}" {% if page.lang == 'en' %}class="active"{% endif %}>EN</a>
+            </div>
+        </nav>
+    </div>
+</header>

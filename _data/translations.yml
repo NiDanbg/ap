@@ -1,0 +1,17 @@
+bg:
+  home: "Начало"
+  about: "За мен"
+  books: "Книги"
+  blog: "Блог"
+  contact: "Контакт"
+  read_more: "Прочети повече"
+  buy_now: "Купи сега"
+  
+en:
+  home: "Home"
+  about: "About"
+  books: "Books"
+  blog: "Blog"
+  contact: "Contact"
+  read_more: "Read more"
+  buy_now: "Buy now"
